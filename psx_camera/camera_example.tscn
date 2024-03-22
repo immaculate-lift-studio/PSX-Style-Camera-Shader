@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpw3h80y7gl2o"]
+
+[ext_resource type="Shader" path="res://psx_camera/psx_camera_shader.gdshader" id="1_nv63b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndpt6"]
+albedo_color = Color(0.423529, 0.423529, 0.423529, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji24u"]
+albedo_color = Color(1, 0.341176, 0.227451, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_on2fo"]
+albedo_color = Color(0.439216, 0.905882, 0.411765, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daf8o"]
+albedo_color = Color(0.129412, 0.337255, 0.6, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rap5"]
+render_priority = 0
+shader = ExtResource("1_nv63b")
+shader_parameter/fog_color = Color(0.870588, 0.623529, 0.921569, 1)
+shader_parameter/noise_color = null
+shader_parameter/fog_distance = 100.0
+shader_parameter/fog_fade_range = 84.525
+shader_parameter/enable_fog = true
+shader_parameter/enable_noise = false
+shader_parameter/noise_time_fac = 4.258
+shader_parameter/enable_color_limitation = false
+shader_parameter/color_levels = 16
+shader_parameter/enable_dithering = false
+shader_parameter/dither_strength = 0.3
+
+[sub_resource type="QuadMesh" id="QuadMesh_afu2w"]
+material = SubResource("ShaderMaterial_2rap5")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="CameraExample" type="Node3D"]
+
+[node name="Ground" type="CSGBox3D" parent="."]
+size = Vector3(100, 0.5, 100)
+material = SubResource("StandardMaterial3D_ndpt6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0747, 4.39386, -20.6396)
+size = Vector3(2, 10, 2)
+material = SubResource("StandardMaterial3D_ji24u")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1164, 2.76483, 1.43046)
+size = Vector3(2, 10, 2)
+material = SubResource("StandardMaterial3D_ji24u")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5345, 2.76483, -11.7604)
+size = Vector3(2, 10, 2)
+material = SubResource("StandardMaterial3D_ji24u")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7025, 2.76483, -17.091)
+size = Vector3(2, 10, 2)
+material = SubResource("StandardMaterial3D_ji24u")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.94478, 2.21119, 0.607769)
+radius = 1.634
+height = 9.699
+material = SubResource("StandardMaterial3D_on2fo")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.715, 4.30806, -17.2889)
+radius = 1.634
+height = 9.699
+material = SubResource("StandardMaterial3D_on2fo")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9614, 4.30806, 13.0696)
+radius = 1.634
+height = 9.699
+material = SubResource("StandardMaterial3D_on2fo")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0303, 2.07957, 4.96235)
+size = Vector3(4, 4, 4)
+material = SubResource("StandardMaterial3D_daf8o")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.565125, 0, 0.825005, 0, 1, 0, -0.825005, 0, 0.565125, 29.597, 6.89349, 18.5922)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0763102, 0, -0.55748)
+mesh = SubResource("QuadMesh_afu2w")

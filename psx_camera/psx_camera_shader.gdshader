@@ -4,22 +4,20 @@ uniform sampler2D depth_texture : source_color, hint_depth_texture;
 uniform sampler2D screen_texture : source_color, hint_screen_texture, repeat_disable, filter_nearest;
 uniform vec3 fog_color : source_color;
 uniform vec3 noise_color : source_color;
-uniform float noise_time_fac : hint_range(0.1, 10);
-uniform float fog_distance : hint_range(1, 6000);
-uniform float fog_fade_range : hint_range(1, 6000) = 1000;
+uniform float fog_distance : hint_range(1, 6000) = 100;
+uniform float fog_fade_range : hint_range(1, 6000) = 50;
 uniform bool enable_fog = true; // Toggle for fog effect
 uniform bool enable_noise = true;
+uniform float noise_time_fac : hint_range(0.1, 10) = 4;
 uniform bool enable_color_limitation = true;
 uniform int color_levels : hint_range(2, 256) = 32;
 uniform bool enable_dithering = true;
-uniform float dither_strength : hint_range(0.0, 1.0) = 0.1; 
+uniform float dither_strength : hint_range(0.0, 1.0) = 0.3; 
 
-// Old fasioned sine based noise function found at https://www.shadertoy.com/view/4djSRW
 float hashOld12(vec2 p){
 	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453 + (sin((TIME)) / noise_time_fac)) ;
 }
 
-// The order of the input colors seems to matter here. Black doesn't work as the second argument
 vec3 color_mix(vec3 a, vec3 b, float f ){
 	f = clamp(abs(f), 0,1);
 	float invf = 1.0 - f;
@@ -82,7 +80,5 @@ void fragment(){
 	}
 	
 	ALBEDO = final_color;
-	
-	//ALBEDO = vec3(linear_depth) * (1.0 / fog_distance); // uncomment to view the distance as a greyscale image
 }
 
