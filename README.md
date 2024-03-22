@@ -6,12 +6,12 @@ For the fog, I took direct inspiration and direction from the excellent [Godot4-
 ## Examples
 ### All effects turned on (screen shot from my WIP game)
 ![All Effects - RotorSim](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/0b964ddf-a61a-4199-b144-f5da801dd831)
-### Fog, Noise, Color Limiting
-![Fog, Noise, Color Limiting](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/d27d1869-8ebe-465b-8972-44c6a222a41f)
-### Fog and Noise
-![Fog, Noise](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/a12ad33b-573c-4dc2-9734-c0bab2b27147)
 ### Fog
 ![Fog](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/6b3bef53-b1bb-454e-80c7-45fed66bd3d9)
+### Fog and Noise
+![Fog, Noise](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/a12ad33b-573c-4dc2-9734-c0bab2b27147)
+### Fog, Noise, Color Limiting
+![Fog, Noise, Color Limiting](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/d27d1869-8ebe-465b-8972-44c6a222a41f)
 ### Fog color can be changed
 ![Fog Pink](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/e5e852ff-f5c5-4b0b-b006-81b7ee4950bc)
 
