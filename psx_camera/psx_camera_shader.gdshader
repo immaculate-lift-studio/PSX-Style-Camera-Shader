@@ -2,11 +2,12 @@ shader_type spatial;
 render_mode cull_disabled, unshaded;
 uniform sampler2D depth_texture : source_color, hint_depth_texture;
 uniform sampler2D screen_texture : source_color, hint_screen_texture, repeat_disable, filter_nearest;
+
+uniform bool enable_fog = true; 
 uniform vec3 fog_color : source_color;
 uniform vec3 noise_color : source_color;
 uniform float fog_distance : hint_range(1, 6000) = 100;
 uniform float fog_fade_range : hint_range(1, 6000) = 50;
-uniform bool enable_fog = true; // Toggle for fog effect
 uniform bool enable_noise = true;
 uniform float noise_time_fac : hint_range(0.1, 10) = 4;
 uniform bool enable_color_limitation = true;
@@ -75,10 +76,8 @@ void fragment(){
 	if (enable_dithering){
 		float brightness = dot(final_color, vec3(0.3, 0.59, 0.11));
 		brightness += dither_strength * (dither(FRAGCOORD.xy, brightness) - 0.5);
-		vec3 dithered_color = final_color * (1.0 + dither_strength * (dither(FRAGCOORD.xy, brightness) - 0.5));
 		final_color *= (1.0 + dither_strength * (dither(FRAGCOORD.xy, brightness) - 0.5));
 	}
-	
 	ALBEDO = final_color;
 }
 

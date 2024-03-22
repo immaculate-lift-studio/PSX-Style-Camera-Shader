@@ -17,11 +17,11 @@ albedo_color = Color(0.129412, 0.337255, 0.6, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2rap5"]
 render_priority = 0
 shader = ExtResource("1_nv63b")
-shader_parameter/fog_color = Color(0.870588, 0.623529, 0.921569, 1)
+shader_parameter/enable_fog = true
+shader_parameter/fog_color = Color(0.729412, 0.729412, 0.729412, 1)
 shader_parameter/noise_color = null
 shader_parameter/fog_distance = 100.0
-shader_parameter/fog_fade_range = 84.525
-shader_parameter/enable_fog = true
+shader_parameter/fog_fade_range = 74.805
 shader_parameter/enable_noise = false
 shader_parameter/noise_time_fac = 4.258
 shader_parameter/enable_color_limitation = false
