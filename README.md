@@ -4,8 +4,8 @@ This is a Camera shader for Godot 4 to add distance fog with optional noise, col
 For the fog, I took direct inspiration and direction from the excellent [Godot4-ScreenSpacePostFX-DepthFog]( https://github.com/zvodd/Godot4-ScreenSpacePostFX-DepthFog/tree/main) by zvodd. His technique is different (using viewports) and contains features mine does not, so please check it out! The color reduction and dithering techniques are my own. 
 
 ## Examples
-### All effects turned on
-![All Effects](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/797a053c-b93d-488c-980d-59c368a9b3bf)
+### All effects turned on (screen shot from my WIP game)
+![All Effects - RotorSim](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/0b964ddf-a61a-4199-b144-f5da801dd831)
 ### Fog, Noise, Color Limiting
 ![Fog, Noise, Color Limiting](https://github.com/GEG-fairbear8974/PSX-Style-Camera-Shader/assets/112404117/d27d1869-8ebe-465b-8972-44c6a222a41f)
 ### Fog and Noise
@@ -35,4 +35,4 @@ Dither Strength - Higher number mean bigger dots
 If you have any transparent objects in your scene (meshes, sprites, etc) this shader won't "see" them as the render mode doesn't allow alpha transparency. In order to have transparent objects been seen you must change the "Render Priority" of each object to a number higher than "0". Everything in the editor is set to "0" for a new project, so in most cases setting this to "1" for **Each** transparent object will be adequete.
 
 ## License
-MIT
+MIT. I hope this helps somebody in their Godot journey!
