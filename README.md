@@ -21,15 +21,15 @@ If downloading the project, just open up the camera_example.tscn and check out h
 If starting from stratch, create a new 3D scene and add a camera. Create a new MeshInstance3D as a child of the camera, assign it a QuadMesh, then make the size 2x2. Check the box "flip faces". Move the mesh so it's in front of the camera very slightly. Then all you need to do is give the QuadMesh a new material -> New ShaderMaterial -> New Shader. Assign the psx_camera_shader.gdshader to the material and boom you're done. Check the shader parameters to make adjustments and edit everything:
 
 ## Variables
-Enable Fog - Enables/disables fog
-Fog Color - Color of the fog
-Noise Color - Color of the noise overlayed on top of the fog
-Fog Fade Range - The distance in units away from the camera the fog is completely opaque
-Noise Time Fac - The amount and movement of the noise
-Enable Color Limitation - Enables/disables limiting the colors
-Color Levels - Amount of colors allowed onscreen if Enable Color Limitation is checked
-Enable Dithering - Enables/disables dithering
-Dither Strength - Higher number mean bigger dots
+Enable Fog - Enables/disables fog  
+Fog Color - Color of the fog  
+Noise Color - Color of the noise overlayed on top of the fog  
+Fog Fade Range - The distance in units away from the camera the fog is completely opaque  
+Noise Time Fac - The amount and movement of the noise  
+Enable Color Limitation - Enables/disables limiting the colors  
+Color Levels - Amount of colors allowed onscreen if Enable Color Limitation is checked  
+Enable Dithering - Enables/disables dithering  
+Dither Strength - Higher number mean bigger dots  
 
 ## Tips
 If you have any transparent objects in your scene (meshes, sprites, etc) this shader won't "see" them as the render mode doesn't allow alpha transparency. In order to have transparent objects been seen you must change the "Render Priority" of each object to a number higher than "0". Everything in the editor is set to "0" for a new project, so in most cases setting this to "1" for **Each** transparent object will be adequete.
