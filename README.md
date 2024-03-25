@@ -24,7 +24,8 @@ If starting from stratch, create a new 3D scene and add a camera. Create a new M
 Enable Fog - Enables/disables fog  
 Fog Color - Color of the fog  
 Noise Color - Color of the noise overlayed on top of the fog  
-Fog Fade Range - The distance in units away from the camera the fog is completely opaque  
+Fog Distance - The distance in units away from the camera the fog is completely opaque  
+Fog Fade Range - How much distance the fog will take to fade to opaque  
 Noise Time Fac - The amount and movement of the noise  
 Enable Color Limitation - Enables/disables limiting the colors  
 Color Levels - Amount of colors allowed onscreen if Enable Color Limitation is checked  
