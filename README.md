@@ -25,6 +25,7 @@ Enable Fog - Enables/disables fog
 Fog Color - Color of the fog  
 Noise Color - Color of the noise overlayed on top of the fog  
 Fog Distance - The distance in units away from the camera the fog is completely opaque  
+Noise Enabled - Turns noise on/off
 Fog Fade Range - How much distance the fog will take to fade to opaque  
 Noise Time Fac - The amount and movement of the noise  
 Enable Color Limitation - Enables/disables limiting the colors  
