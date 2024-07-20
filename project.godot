@@ -12,6 +12,7 @@ config_version=5
 
 config/name="PSX Style Camera Shader"
 config/tags=PackedStringArray("open_source", "released")
+run/main_scene="res://psx_camera/camera_example.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

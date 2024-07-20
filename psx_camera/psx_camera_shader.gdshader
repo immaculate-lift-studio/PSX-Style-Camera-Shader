@@ -16,7 +16,7 @@ uniform bool enable_dithering = true;
 uniform float dither_strength : hint_range(0.0, 1.0) = 0.3;
 
 float hashOld12(vec2 p){
-	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453 + (sin((TIME)) / noise_time_fac)) ;
+	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453 + (TIME / noise_time_fac)) ;
 }
 
 vec3 color_mix(vec3 a, vec3 b, float f ){
@@ -58,9 +58,7 @@ void fragment(){
 	view.xyz /= view.w;
 
 	float linear_depth = -view.z;
-
 	float depth_mask_inv = clamp((linear_depth - (fog_distance - fog_fade_range)) / fog_fade_range, 0.0, 1.0);
-
 	vec3 final_color = screen_color;
 
 	if (enable_noise){

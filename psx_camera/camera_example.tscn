@@ -1,7 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpw3h80y7gl2o"]
+[gd_scene load_steps=15 format=3 uid="uid://cpw3h80y7gl2o"]
 
 [ext_resource type="Texture2D" uid="uid://xhjx1xkwj7xt" path="res://Thumbnail.png" id="1_mesaj"]
 [ext_resource type="Shader" path="res://psx_camera/psx_camera_shader.gdshader" id="1_nv63b"]
+[ext_resource type="Script" path="res://psx_camera/fly_camera.gd" id="3_4w045"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lialc"]
+
+[sub_resource type="Sky" id="Sky_n7fr2"]
+sky_material = SubResource("ProceduralSkyMaterial_lialc")
+
+[sub_resource type="Environment" id="Environment_nd8w7"]
+background_mode = 2
+sky = SubResource("Sky_n7fr2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndpt6"]
 albedo_color = Color(0.423529, 0.423529, 0.423529, 1)
@@ -31,7 +41,7 @@ shader_parameter/fog_distance = 100.0
 shader_parameter/fog_fade_range = 50.0
 shader_parameter/enable_noise = false
 shader_parameter/noise_time_fac = 4.0
-shader_parameter/enable_color_limitation = false
+shader_parameter/enable_color_limitation = true
 shader_parameter/color_levels = 32
 shader_parameter/enable_dithering = false
 shader_parameter/dither_strength = 0.3
@@ -42,6 +52,12 @@ flip_faces = true
 size = Vector2(2, 2)
 
 [node name="CameraExample" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nd8w7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.5, -0.866025, 0, -0.433013, 0.25, 0.866025, -0.75, 0.433013, -0.5, 0, 0, 0)
 
 [node name="Ground" type="CSGBox3D" parent="."]
 size = Vector3(100, 0.5, 100)
@@ -97,6 +113,8 @@ mesh = SubResource("PlaneMesh_7lkts")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.565125, 0, 0.825005, 0, 1, 0, -0.825005, 0, 0.565125, 21.597, 19.8935, 18.5922)
+script = ExtResource("3_4w045")
+max_speed = 100.0
 
 [node name="PSXMesh" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0763102, 0, -0.55748)
