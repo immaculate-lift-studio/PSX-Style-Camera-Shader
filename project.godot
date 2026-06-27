@@ -8,13 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="PSX Style Camera Shader"
 config/tags=PackedStringArray("open_source", "released")
-run/main_scene="res://psx_camera/camera_example.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+run/main_scene="res://addons/psx_camera/camera_example.tscn"
+config/features=PackedStringArray("4.6", "Forward Plus")
 
 [dotnet]
 
